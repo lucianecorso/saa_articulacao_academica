@@ -1,91 +1,4 @@
-
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        pr: {
-                            blue: '#003366',
-                            navy: '#001F3F',
-                            sky: '#005691',
-                            green: '#00A859',
-                            yellow: '#FFCC00',
-                            light: '#F4F7FA'
-                        }
-                    },
-                    fontFamily: {
-                        sans: ['Inter', 'sans-serif']
-                    }
-                }
-            }
-        }
-    </script>
-
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
-
-        body {
-            font-family: 'Inter', sans-serif;
-        }
-
-        /* Active Tab Navigation Style */
-        .tab-btn.active {
-            border-bottom-color: #003366;
-            color: #003366;
-            font-weight: 700;
-            background-color: #ffffff;
-            box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
-        }
-
-        /* Custom Scrollbar */
-        .custom-scrollbar::-webkit-scrollbar {
-            width: 6px;
-            height: 6px;
-        }
-        .custom-scrollbar::-webkit-scrollbar-track {
-            background: #f1f5f9;
-        }
-        .custom-scrollbar::-webkit-scrollbar-thumb {
-            background: #cbd5e1;
-            border-radius: 4px;
-        }
-        .custom-scrollbar::-webkit-scrollbar-thumb:hover {
-            background: #94a3b8;
-        }
-
-        /* Search Filter Highlight Style */
-        .highlight-search {
-            background-color: #fef08a;
-            color: #0f172a;
-            border-radius: 0.25rem;
-            padding-left: 0.25rem;
-            padding-right: 0.25rem;
-            transition: background-color 0.2s ease;
-        }
-
-        /* Toast Animation */
-        @keyframes slideInUp {
-            from {
-                transform: translateY(100%);
-                opacity: 0;
-            }
-            to {
-                transform: translateY(0);
-                opacity: 1;
-            }
-        }
-
-        .toast-animate {
-            animation: slideInUp 0.3s ease-out forwards;
-        }
-
-        @media print {
-            .no-print { display: none !important; }
-            .print-only { display: block !important; }
-        }
- /* STREAMING_CHUNK:Definindo variaveis globais e CSS Reset offline... /
-/ ==========================================
-VARIAVEIS DE DESIGN E TEMA INSTITUCIONAL
-========================================== */
+/* STREAMING_CHUNK:Definindo variáveis globais e CSS Reset... */
 :root {
 --pr-blue: #003366;
 --pr-navy: #001f3f;
@@ -115,8 +28,6 @@ VARIAVEIS DE DESIGN E TEMA INSTITUCIONAL
 --transition: all 0.2s ease-in-out;
 }
 
-/* RESET BASICO PARA INDEPENDENCIA DE INTERNET */
-
 {
 box-sizing: border-box;
 margin: 0;
@@ -140,10 +51,7 @@ margin: 0 auto;
 padding: 0 1.5rem;
 }
 
-/* STREAMING_CHUNK:Estilizando barra superior e cabecalho... /
-/ ==========================================
-BARRA SUPERIOR DO ESTADO
-========================================== */
+/* STREAMING_CHUNK:Estilizando barra superior do estado... */
 .top-bar {
 background-color: var(--pr-navy);
 color: #ffffff;
@@ -197,9 +105,7 @@ gap: 0.25rem;
 color: var(--slate-500);
 }
 
-/* ==========================================
-NAVEGAÇÃO PRINCIPAL E BUSCA
-========================================== */
+/* STREAMING_CHUNK:Estilizando navegação principal e campo de busca... */
 .main-nav {
 background-color: #ffffff;
 border-bottom: 1px solid var(--slate-200);
@@ -282,10 +188,7 @@ border-color: var(--pr-blue);
 box-shadow: 0 0 0 3px rgba(0, 51, 102, 0.1);
 }
 
-/* STREAMING_CHUNK:Estilizando secoes de conteudo e cartoes... /
-/ ==========================================
-CONTEÚDO PRINCIPAL E HEROCARD
-========================================== */
+/* STREAMING_CHUNK:Estilizando o cartão principal Hero e os cards de responsabilidade... */
 .main-content {
 padding-top: 2rem;
 padding-bottom: 2rem;
@@ -363,9 +266,7 @@ font-size: 0.75rem;
 color: var(--slate-200);
 }
 
-/* ==========================================
-BANNERS DE ALERTA E CARTÕES
-========================================== */
+/* STREAMING_CHUNK:Estilizando banners de alerta e botões... */
 .banner-alert {
 background-color: var(--amber-light);
 border: 1px solid var(--amber-border);
@@ -401,10 +302,7 @@ gap: 0.5rem;
 flex-wrap: wrap;
 }
 
-/* STREAMING_CHUNK:Estilizando componentes de abas e botoes... /
-/ ==========================================
-SISTEMA DE ABAS
-========================================== */
+/* STREAMING_CHUNK:Estilizando abas e seletores... */
 .modules-section {
 display: flex;
 flex-direction: column;
@@ -474,10 +372,7 @@ gap: 1.5rem;
 display: none !important;
 }
 
-/* STREAMING_CHUNK:Estilizando layout de formularios e tabelas... /
-/ ==========================================
-ESTILOS DE CARTÕES E ELEMENTOS INTERNOS
-========================================== */
+/* STREAMING_CHUNK:Estilizando cartões internos, listas de documentos e etapas... */
 .card {
 border-radius: 16px;
 padding: 1.5rem;
@@ -561,7 +456,6 @@ background-color: var(--slate-50);
 border: 1px solid var(--slate-200);
 border-radius: 10px;
 padding: 0.85rem;
-
 }
 
 .step-card h5 {
@@ -586,6 +480,13 @@ display: flex;
 align-items: center;
 justify-content: center;
 margin-bottom: 0.5rem;
+}
+
+.step-tag {
+display: inline-block;
+font-weight: 700;
+font-size: 0.75rem;
+margin-bottom: 0.35rem;
 }
 
 .num-blue { background-color: var(--pr-blue); }
@@ -715,10 +616,7 @@ font-size: 0.75rem;
 color: var(--slate-700);
 }
 
-/* STREAMING_CHUNK:Estilizando calendarios e botoes utilitarios... /
-/ ==========================================
-CALENDÁRIOS E BOTÕES
-========================================== */
+/* STREAMING_CHUNK:Estilizando calendários e caixas de datas... */
 .calendar-box {
 border-radius: 12px;
 padding: 1rem;
@@ -762,27 +660,10 @@ font-size: 0.9rem;
 .cal-note {
 font-size: 0.7rem;
 font-style: italic;
+margin-top: 0.5rem;
 }
 
-.grid-documents {
-display: grid;
-grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-gap: 0.75rem;
-}
-
-.doc-card-box {
-background-color: var(--slate-50);
-padding: 0.75rem;
-border-radius: 10px;
-border: 1px solid var(--slate-100);
-font-size: 0.75rem;
-}
-
-.doc-card-box p {
-color: var(--slate-500);
-}
-
-/* BOTÕES GERAIS */
+/* STREAMING_CHUNK:Estilizando botões, toasters de cópia e caixa de busca... */
 .btn {
 display: inline-flex;
 align-items: center;
@@ -812,44 +693,6 @@ transition: var(--transition);
 .btn-purple:hover { background-color: #581c87; }
 .btn-blue { background-color: var(--pr-blue); color: #ffffff; }
 .btn-blue:hover { background-color: var(--pr-sky); }
-
-.btn-link {
-background: transparent;
-border: none;
-color: var(--pr-blue);
-font-size: 0.75rem;
-font-weight: 700;
-cursor: pointer;
-padding: 0;
-text-decoration: underline;
-}
-
-/* STREAMING_CHUNK:Estilizando rodape e destaques de busca... /
-/ ==========================================
-CARTÕES DE CONTATO E RODAPÉ
-========================================== */
-.contacts-grid {
-display: grid;
-grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-gap: 1.5rem;
-}
-
-.icon-circle {
-width: 40px;
-height: 40px;
-border-radius: 10px;
-display: flex;
-align-items: center;
-justify-content: center;
-margin-bottom: 0.75rem;
-}
-
-.circle-blue { background-color: #dbeafe; color: var(--pr-blue); }
-.circle-green { background-color: var(--emerald-light); color: var(--emerald-main); }
-.circle-purple { background-color: var(--purple-light); color: var(--purple-main); }
-
-.card-contact-title { font-size: 0.9rem; font-weight: 700; margin-bottom: 0.25rem; }
-.card-contact-text { font-size: 0.75rem; color: var(--slate-500); margin-bottom: 0.5rem; }
 
 .footer {
 background-color: var(--slate-900);
@@ -889,14 +732,6 @@ justify-content: center;
 .footer-title { color: #ffffff; font-weight: 600; }
 .footer-subtitle { font-size: 0.68rem; color: var(--slate-500); }
 
-.footer-links {
-display: flex;
-gap: 0.75rem;
-}
-
-.footer-links a { color: var(--slate-300); text-decoration: none; }
-.footer-links a:hover { color: #ffffff; }
-
 /* DESTAQUE NA BUSCA */
 .highlight-search {
 background-color: #fef08a !important;
@@ -929,7 +764,6 @@ from { transform: translateY(100%); opacity: 0; }
 to { transform: translateY(0); opacity: 1; }
 }
 
-/* TAMANHO DE ÍCONES SVG */
 .icon-xs { width: 14px; height: 14px; }
 .icon-sm { width: 18px; height: 18px; }
 .icon-md { width: 22px; height: 22px; }
@@ -943,7 +777,5 @@ to { transform: translateY(0); opacity: 1; }
 .text-light { color: var(--slate-300); }
 .text-small { font-size: 0.75rem; }
 .text-mini { font-size: 0.65rem; color: var(--slate-500); }
-.bg-emerald { background-color: var(--emerald-main) !important; color: #ffffff !important; }
 .bg-emerald-light { background-color: var(--emerald-light) !important; }
 .link-bold { font-weight: 700; text-decoration: underline; color: var(--amber-main); }
-.link-emerald { font-weight: 700; color: var(--emerald-main); text-decoration: none; }

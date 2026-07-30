@@ -1,28 +1,20 @@
-/**
- * LÓGICA DE PROGRAMAÇÃO SAA NRE IRATI
- * Desenvolvido sem qualquer codigo inline para separacao total de responsabilidades.
- */
-
 document.addEventListener('DOMContentLoaded', function() {
 
-    /* ==========================================
-       GERENCIADOR DE ABAS (TABS)
-       ========================================== */
     const tabButtons = document.querySelectorAll('.tab-btn');
     const tabContents = document.querySelectorAll('.tab-content');
 
     function activateTab(tabId) {
-        // Esconde todos os conteudos de abas
+        // Esconde todos os conteúdos das abas
         tabContents.forEach(content => {
             content.classList.add('hidden');
         });
 
-        // Desativa estilo de todos os botoes
+        // Desativa estilo visual de todos os botões de abas
         tabButtons.forEach(btn => {
             btn.classList.remove('active');
         });
 
-        // Ativa apenas a aba e botão selecionados
+        // Exibe a aba e ativa o botão selecionado
         const targetContent = document.getElementById('content-' + tabId);
         const targetButton = document.querySelector(`.tab-btn[data-tab="${tabId}"]`);
 
@@ -35,7 +27,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
-    // Associa evento de clique aos botoes das abas via Event Listener
+    // Associa ouvinte de eventos aos botões
     tabButtons.forEach(button => {
         button.addEventListener('click', function() {
             const selectedTab = this.getAttribute('data-tab');
@@ -43,18 +35,12 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-
-    /* ==========================================
-       SISTEMA DE CÓPIA PARA ÁREA DE TRANSFERÊNCIA (TOAST)
-       ========================================== */
     function showToastNotification(messageText) {
-        // Remove toast anterior se existir
         const oldToast = document.getElementById('app-toast');
         if (oldToast) {
             oldToast.remove();
         }
 
-        // Cria elemento de notificação dinâmico
         const toast = document.createElement('div');
         toast.id = 'app-toast';
         toast.className = 'toast-message';
@@ -62,7 +48,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
         document.body.appendChild(toast);
 
-        // Oculta automaticamente após 3 segundos
         setTimeout(() => {
             if (toast) {
                 toast.remove();
@@ -81,7 +66,6 @@ document.addEventListener('DOMContentLoaded', function() {
         showToastNotification(`Número <strong>${textToCopy}</strong> copiado com sucesso!`);
     }
 
-    // Associa evento de clique a todos os botões com atributo data-copy
     const copyButtons = document.querySelectorAll('[data-copy]');
     copyButtons.forEach(button => {
         button.addEventListener('click', function() {
@@ -92,10 +76,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-
-    /* ==========================================
-       SISTEMA DE FILTRO E BUSCA EM TEMPO REAL
-       ========================================== */
     const searchInput = document.getElementById('searchInput');
 
     if (searchInput) {
@@ -103,7 +83,6 @@ document.addEventListener('DOMContentLoaded', function() {
             const query = event.target.value.toLowerCase().trim();
             const searchableElements = document.querySelectorAll('.tab-content p, .tab-content li, .tab-content h4, .tab-content h5, .tab-content strong');
 
-            // Se campo de busca estiver vazio, remove destaques
             if (!query) {
                 searchableElements.forEach(element => {
                     element.classList.remove('highlight-search');
@@ -111,14 +90,13 @@ document.addEventListener('DOMContentLoaded', function() {
                 return;
             }
 
-            // Destaca elementos correspondentes e abre a aba correspondente
             searchableElements.forEach(element => {
                 const textContent = element.textContent.toLowerCase();
 
                 if (textContent.includes(query)) {
                     element.classList.add('highlight-search');
 
-                    // Se o item encontrado estiver em uma aba oculta, abre a aba
+                    // Alterna para a aba onde o resultado foi localizado
                     const parentTabContent = element.closest('.tab-content');
                     if (parentTabContent && parentTabContent.classList.contains('hidden')) {
                         const tabId = parentTabContent.id.replace('content-', '');
